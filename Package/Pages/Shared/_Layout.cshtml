@@ -1,0 +1,31 @@
+﻿@{ 
+	string filePath = this.Model.Request.Path.ToString();
+	string fileName = filePath.Substring(filePath.LastIndexOf("/") + 1);
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>@ViewData["Title"]</title>
+	<link rel="stylesheet" href="~/css/base.css" />
+	<link rel="stylesheet" href="~/css/HRButton.css" />
+	<link rel="stylesheet" href="~/css/HRHint.css" />
+	<link rel="stylesheet" href="~/css/ui.jqgrid.css" />
+	<link rel="stylesheet" href="~/css/HRGrid.css" />
+	<link rel="stylesheet" href="@(fileName).css" />
+	@RenderSection("Styles", required: false)
+	<script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="~/js/common.js"></script>
+	<script type="text/javascript" src="~/js/clsHRButton.js"></script>
+	<script type="text/javascript" src="~/js/clsHRHint.js"></script>
+	<script type="text/javascript" src="~/js/jquery.jqGrid.js"></script>
+	<script type="text/javascript" src="~/js/HRGrid.js"></script>
+	<script type="text/javascript" src="@(fileName).js"></script>
+	@RenderSection("Scripts", required: false)
+</head>
+<body base-width="@ViewData["base-width"]" base-height="@ViewData["base-height"]">
+	<form method="post" onsubmit="common.onsubmit();">
+		@RenderBody()
+	</form>
+</body>
+</html>

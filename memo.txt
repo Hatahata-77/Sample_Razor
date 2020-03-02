@@ -1,0 +1,9 @@
+
+/Pages/Index.cshtml.cs
+	リダイレクトのサンプル
+
+/Pages/webForm_P/Sys_O/HRPOM0101.cshtml
+	今のWebFormに似せた作りにするとしたらこんな感じになりそう？のサンプル
+	自作タグヘルパー（ユーザーコントロールの代わり）を使用
+
+

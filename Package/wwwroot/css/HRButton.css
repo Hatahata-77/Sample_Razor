@@ -1,0 +1,109 @@
+﻿/*****************************
+ ボタン系共通
+******************************/
+input.hrbutton, input.hrarrbutton, input.hributton
+{
+	background-position: left top;
+	background-repeat: no-repeat;
+    background-color: Transparent;
+    margin: 0;
+	border:0;
+	padding:0;
+	cursor: pointer;
+    *overflow: visible; /* 互換モード（IE7以下）でボタンの左右に不必要な余白ができるのを消す */
+}
+/* ボタン系のdisabled共通 */
+input.hrbutton_d
+{
+	cursor: auto;
+}
+/***********************************************
+ HRButton用
+ 通常時、disabled、マウスオーバー時のクラスは
+ clsHRButton.vbとclsHRButton.jsそれぞれでセット。
+************************************************/
+input.hrbutton
+{
+	font-size: 10.5pt;
+    text-align:center;
+	text-decoration: none;
+	color: #000000;
+}
+/* アイコンが左側にあるとき */
+input.hrbutton_l
+{
+	padding:0 7px 0 30px;
+}
+/* アイコンが右側にあるとき */
+input.hrbutton_r
+{
+	padding:0 30px 0 7px;
+}
+/*------- 
+ 高さ小
+--------*/
+/* ---通常時--- */
+input.hrbutton_s_n
+{
+	background-position: left top;
+}
+/* ---disabled--- */
+input.hrbutton_s_d
+{
+	background-position: left -22px;
+}
+/* ---マウスオーバー--- */
+input.hrbutton_s_f
+{
+	background-position: left -44px; 
+}
+/*------- 
+ 高さ大
+--------*/
+/* ---通常時--- */
+input.hrbutton_m_n
+{
+	background-position: left top;
+}
+/* ---disabled--- */
+input.hrbutton_m_d
+{
+	background-position: left -30px;
+}
+/* ---マウスオーバー--- */
+input.hrbutton_m_f
+{
+	background-position: left -60px; 
+}
+
+/***********************************************
+ HRArrowButton用
+ 通常時、disabled、マウスオーバー時のクラスは
+ clsHRArrowButton.vbとclsHRButton.jsそれぞれでセット。
+************************************************/
+/* disabled */
+input.hrarrbutton_d
+{
+	background-position: left -36px;
+}
+/* マウスオーバー */
+input.hrarrbutton_f
+{
+	background-position: left -72px; /* ボタン画像が1px下げて描かれているので、通常時と同じ位置に上げて表示する */
+}
+
+/***********************************************
+ HRIconButton用
+ 通常時、disabled、マウスオーバー時のクラスは
+ clsHRArrowButton.vbとclsHRButton.jsそれぞれでセット。
+************************************************/
+/* disabled */
+input.hributton_d
+{
+	background-position: left -22px;
+}
+/* マウスオーバー */
+input.hributton_f
+{
+	background-position: left -44px; /* ボタン画像が1px下げて描かれているので、通常時と同じ位置に上げて表示する */
+}

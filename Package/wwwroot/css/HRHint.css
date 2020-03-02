@@ -1,0 +1,56 @@
+﻿/* バルーンヒントを表示させる要素であることを表す */
+.balloonhint
+{	}
+
+/* アイコン部分 */
+span.balloonhint {
+	display: inline-block;
+    overflow: visible;
+    width: 24px; /* アイコン画像の幅 */
+    height: 18px; /* アイコン画像の高さ */
+    /* バックグラウンドイメージはリソース内のものを使用する */
+    background: no-repeat right bottom;
+    border: 0;
+    cursor:help;
+    vertical-align:middle;		/* アイコンを中央ぞろえにする */
+    *vertical-align:baseline;	/* IE7以下はbaselineで中央になる */
+}
+
+/* メッセージのコンテナ部分 */
+div.hintbody {
+	position:absolute;
+    overflow: visible;
+    visibility: hidden;
+	padding: 0;
+	left: 0px;
+	top: 0px;
+	z-index:9999;
+    background-color: Transparent;
+    cursor: default;
+}
+/* メッセージ */
+div.hintbody .hintmsg {
+    position: absolute;
+    display: none;
+    visibility: visible; /* コンテナのvisibilityを継承しない */
+    padding: 5px;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;	
+    text-decoration: none;
+    text-align:left;
+    line-height:14px;
+    font-size: 10pt;
+    width: auto;
+    background-color: #ffffe7;
+    color: #444444;
+    border: solid 1px #c6c6c6;
+}
+/* メッセージのタイトル部 */
+div.hintbody .hintmsg .hinttitle
+{
+	display:block;
+	font-weight: bold;
+	margin: -5px -5px 5px -5px; /* hintmsgのpaddingを打ち消してぴったり表示させる */
+	padding: 4px 6px 2px 6px;
+}

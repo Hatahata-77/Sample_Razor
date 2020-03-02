@@ -1,0 +1,1107 @@
+﻿@charset "UTF-8";
+html, body, form {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+/*------------------------------------------------------------------------------*/
+/* bodyタグ																		*/
+/*------------------------------------------------------------------------------*/
+body
+{
+	margin:0;
+	border:0;
+	padding:0;
+	font-family:ＭＳ ゴシック,sans-serif;
+	font-size:10.5pt;
+	overflow:hidden;
+	
+	/* 右クリックを無効にするスクリプトをbodyタグに適用します */
+	behavior:url(../../Scripts/body.htc);
+}
+
+/*------------------------------------------------------------------------------*/
+/* 【機能】																		*/
+/*　　ナビゲーションバーを実装します。											*/
+/* 【使用例】																	*/
+/* 　・全体を囲む場合															*/
+/* 　　class="navigation"														*/
+/*------------------------------------------------------------------------------*/
+div.navigation {
+    border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    border-bottom: 1px solid #82816F;
+    margin: 0;
+    padding: 0;
+    height: 23px;
+    background: url('../Images/hrnavigation_l.png') no-repeat;
+}
+div.navigation input
+{
+	float:right;
+}
+div.navigation h2 {
+    border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    margin: 0px 0px 0px 14px;
+    padding: 0px;
+    line-height: 23px;
+    text-indent: 5px;
+    font-size: 12pt;
+    background-color: #cef4ce;
+}
+
+/*------------------------------------------------------------------------------*/
+/* 【機能】																		*/
+/*　　ブロックを囲む枠線を引きます。											*/
+/* 【使用例】																	*/
+/* 　・全体を囲む場合															*/
+/* 　　class="block"															*/
+/* 　・上辺、右辺、左辺を囲む場合												*/
+/* 　　class="block-top block-right block-left"									*/
+/*------------------------------------------------------------------------------*/
+/*全体を囲む*/
+div.block
+{
+	margin:2px 2px 2px 2px;
+	padding:0px;
+	border:solid 1px #9a9a9a;
+}
+div.block.left
+{
+	float:left;
+	margin:2px 0px 2px 2px;
+}
+div.block.clear
+{
+	clear:both;
+}
+/*上辺を結合する*/
+div.join_top
+{
+	margin-top:0px;
+	padding:0;
+	border-top:0;
+}
+/*右辺を結合する*/
+div.join_right
+{
+	margin-right:0px;
+	padding:0;
+	border-right:0;
+}
+/*下辺を結合する*/
+div.join_bottom
+{
+	margin-bottom:0px;
+	padding:0;
+	border-bottom:0;
+}
+/*左辺を結合する*/
+div.join_left
+{
+	margin-left:0px;
+	padding:0;
+	border-left:0;
+}
+
+/*全辺を結合する*/
+div.join_all
+{
+	margin:0px;
+	padding:0;
+	border:0;
+}
+
+/*------------------------------------------------------------------------------*/
+/* 【機能】																		*/
+/*　　ブロックのタイトルバーを表示します。										*/
+/*　　タイトルバーの色、大きさとアイコンを指定します。							*/
+/* 【使用例】																	*/
+/*	　ブロックのタイトルに以下の形式で記述します。								*/
+/*    これは決まった様式です。													*/
+/*		    <div class="block-title">										　	*/
+/*		    	<span class="icon_kojin"></span>								*/
+/*		    	<div>															*/
+/*		    		<h3>個人番号を入力し個人を決定します。</h3>					*/
+/*		    	</div>															*/
+/*		    </div>																*/
+/*																				*/
+/*　　spanタグに適用する『icon_kojin』の部分はブロックに使用するアイコンにより  */
+/*　　以下の６種類より選択します。												*/
+/*　　+-------------------------+-----------------------+						*/
+/*　　|		 ブロック名			|  CSSCLASS名			|						*/
+/*　　+=========================+=======================+						*/
+/*　　| 個人情報表示ブロック	| icon_kojin			|						*/
+/*　　+-------------------------+-----------------------+						*/
+/*　　| 世帯情報表示ブロック	| icon_setai			|						*/
+/*　　+-------------------------+-----------------------+						*/
+/*　　| 照会ブロック			| icon_reference		|						*/
+/*　　+-------------------------+-----------------------+						*/
+/*　　| 設定ブロック			| icon_config			|						*/
+/*　　+-------------------------+-----------------------+						*/
+/*　　| 入力ブロック			| icon_input			|						*/
+/*　　+-------------------------+-----------------------+						*/
+/*　　| 汎用ブロック			| icon_general			|						*/
+/*　　+-------------------------+-----------------------+						*/
+/*------------------------------------------------------------------------------*/
+/*ブロックタイトル全体*/
+div.block-title
+{
+	margin:0;
+	border:0;
+	padding:1px;
+	color:#ffffff;
+	height:24px;
+	position:relative;
+	zoom:1;
+}
+/*ブロックアイコン　－個人情報表示ブロック－　*/
+div.block-title .icon_kojin
+{
+	float:left;
+	background-image:url('../Images/hrblock_kojin.png');
+	background-repeat:no-repeat;
+	width:26px;
+	height:26px;
+}
+/*ブロックアイコン　－世帯情報表示ブロック－　*/
+div.block-title .icon_setai
+{
+	float:left;
+	background-image:url('../Images/hrblock_setai.png');
+	background-repeat:no-repeat;
+	width:26px;
+	height:26px;
+}
+/*ブロックアイコン　－照会ブロック－　*/
+div.block-title .icon_reference
+{
+	float:left;
+	background-image:url('../Images/hrblock_reference.png');
+	background-repeat:no-repeat;
+	width:26px;
+	height:26px;
+}
+/*ブロックアイコン　－設定ブロック－　*/
+div.block-title .icon_config
+{
+	float:left;
+	background-image:url('../Images/hrblock_config.png');
+	background-repeat:no-repeat;
+	width:26px;
+	height:26px;
+}
+/*ブロックアイコン　－入力ブロック－　*/
+div.block-title .icon_input
+{
+	float:left;
+	background-image:url('../Images/hrblock_input.png');
+	background-repeat:no-repeat;
+	width:26px;
+	height:26px;
+}
+/*ブロックアイコン　－汎用ブロック－　*/
+div.block-title .icon_general
+{
+	float:left;
+	background-image:url('../Images/hrblock_general.png');
+	background-repeat:no-repeat;
+	width:26px;
+	height:26px;
+}
+/*ブロックタイトル内のdivタグ　青いバー部分の定義*/
+div.block-title div {
+    height: 100%;
+    margin: 1px 2px 1px 26px;
+    _margin: 1px 5px 1px 0;
+    _position: relative;
+    padding: 0;
+    position: relative;
+    zoom: 1;
+    /*2019.02.01_UPD wakimoto S */
+    /*background-color: #006934;*/
+    background-color: #00885a;
+    /*2019.02.01_UPD wakimoto E */
+    width: auto;
+}
+/*ブロックタイトル内のタイトル文字列　h3タグを使用します*/
+div.block-title div h3
+{
+    position:relative;
+    left: -3px;
+	float:left;
+	margin:0;
+	_margin:0 -5px 0 0; /* divのマージン打消し */
+	border:0;
+	padding:0px;
+	line-height:24px;
+	text-indent:8px;
+	font-size:12pt;
+	font-weight:bold;
+}
+/*ブロックタイトル内の青いバーの内側の定義　ただしdivタグは使用できません*/
+div.block-title div *
+{
+	float:left;
+	display:inline-block;
+	line-height:24px;
+	background-image:none;
+	font-weight:normal;
+	font-size:10pt;
+	margin-left:30px;
+	position:relative;
+	zoom:1;
+}
+/* ブロックタイトル内の青いバーの内側のdiv */
+div.block-title * div{
+    width:auto; /* サイズを標準に戻す */
+}
+/*ブロックタイトル内にボタンを配置する場合、Spanタグで囲います*/
+div.block-title div span.block-button
+{
+	float:right;
+	margin-right:10px;
+	position:relative;
+	zoom:1;
+	top:2px;
+}
+div.block-title div span.block-button input
+{
+	line-height:18px;
+}
+/* balloonhint に対してのスタイル */
+div.block-title div span.balloonhint
+{
+	margin-left:10px;
+	line-height:0px;
+	margin-top:4px;
+	vertical-align:middle;
+}
+/*ブロックタイトル内の青いバー内のlabelタグの定義　主にチェックボックスで使用します*/
+div.block-title div input
+{
+	display:inline-block;
+	height:26px;
+}
+/*ブロックタイトル内の青いバー内のlabelタグの定義　主にチェックボックスで使用します*/
+div.block-title div label
+{
+	margin-left:0px;
+	display:inline-block;
+	height:26px;
+}
+
+/*ブロックタイトル内の青いバー内の2階層目のタグの定義　主にチェックボックスで使用します*/
+div.block-title div * *
+{
+	margin-left:0px;
+}
+
+/*ブロックタイトル内の青いバー内のタグの定義　右詰めにしたい場合に使用します*/
+div.block-title div .right
+{
+	float:right;
+	margin-left:0px;
+	margin-right:0px;
+}
+/*ブロックタイトル内の青いバー内のタグの定義　右詰めにしたタグの内側のタグに使用します*/
+div.block-title div .right *
+{
+	margin-right:0px;
+}
+/*区切り用のセパレータを表示します*/
+div.block-title div .separator
+{
+	padding:0px 0px 0px 5px;
+	background-image:url("../Images/hrblockseparator.png");
+	background-repeat:no-repeat;
+    font-size:12pt;
+    font-weight:bold;
+}
+/* 印刷時に背景が縞々になるのを防ぐ */
+@media print{
+    div.block-title
+    {
+	    background:url('../Images/hrmainbg_r.png') no-repeat right top;
+    }    
+    div.block-title div
+    {
+	    background:url('../Images/hrmainbg_m.png') repeat-x;
+    }
+    div.block-title div h3
+    {
+	    background:url('../Images/hrmainbg_l.png') no-repeat left top;
+    }    
+}
+
+/*------------------------------------------------------------------------------*/
+/* 【機能】																		*/
+/*　　ブロックのコンテンツ部分です。											*/
+/* 【使用例】																	*/
+/*		    <div class="block-content">										　	*/
+/*		    	ここにコンテンツの内容を表示します。							*/
+/*		    </div>																*/
+/*------------------------------------------------------------------------------*/
+div.block-content
+{
+	margin:0px 2px 0px 2px;
+	border:0;
+	padding:0;
+    clear:left;
+}
+
+
+
+/*------------------------------------------------------------------------------*/
+/* 【機能】																		*/
+/*　　サブタイトルの背景色、サイズ、フォントを指定します。						*/
+/* 【使用例】																	*/
+/*	　サブタイトルにはh4タグを使用します。										*/
+/*		    <h4 class="subtitle">個人情報</h4>								　	*/
+/*------------------------------------------------------------------------------*/
+.subtitle {
+    margin: 0;
+    border: none;
+    padding: 0;
+    text-indent: 5px;
+    height: 22px;
+    line-height: 22px;
+    display: inline-block;
+    width: 100%;
+    background-color: #00a29a;
+    color: #ffffff;
+}
+/* balloonhint に対してのスタイル */
+.subtitle span.balloonhint
+{
+	line-height:0px;
+	margin-top:-3px;
+	_margin-top:0px;
+	vertical-align:middle;
+}
+
+
+
+/*------------------------------------------------------------------------------*/
+/* 【機能】																		*/
+/*　　情報表示を表示するテーブルのスタイルを決定します。						*/
+/*　　主に個人情報を表示する部分で使用します。									*/
+/* 【使用例】																	*/
+/*    ・tableタグに"info-table"を指定します。									*/
+/*	  　<table class="info-table">												*/
+/*    ・奇数行と偶数行で色を変えたい場合、色を変える行に"stripe"を指定します。	*/
+/*      奇数行、偶数行どちらをストライプカラーにするかは規程されていません。　　*/
+/*　　　画面ごとに周りの配色とのバランスを見て決定してください。				*/
+/*　　例）偶数行の色を変える													*/
+/*    　奇数行：<tr>					←何も指定しない　						*/
+/*    　偶数行：<tr class="stripe">		←偶数行のtrタグに"stripe"を指定		*/
+/*------------------------------------------------------------------------------*/
+table.info-table
+{
+	margin:0;
+	padding:0;
+    border:0;
+	border-collapse:collapse;
+}
+/* ストライプカラー */
+table.info-table tr.stripe td
+{
+	/*background-color:#e3f1eb;*/
+	/*background-color: #f5f5f5;*/
+	background-color: #f1f3f4;
+}
+/* th,tdタグ共通 */
+table.info-table th, table.info-table td
+{
+	margin:0;
+	vertical-align:middle;
+	text-align:left;
+/*	border-top:1px dotted #808080;		*/
+/*	border-bottom:1px dotted #808080;	*/
+	border-top:solid 1px transparent;
+	border-right:solid 1px transparent;
+	border-bottom:solid 1px transparent;
+	border-left:solid 1px transparent;
+}
+/* thタグ */
+table.info-table th
+{
+	padding:0 0 0 5px;
+	line-height:22px;
+	height:22px;
+/*	background-color:#adcfe8; */
+	background-color:#f0fff0;
+}
+/* tdタグ */
+table.info-table td
+{
+	padding:0px 0px 0px 2px;
+	line-height:22px;
+	height:22px;
+}
+
+/* trタグ */
+table.info-table tr
+{
+	height:22px;	
+}
+/* balloonhint に対してのスタイル */
+table.info-table tr td span.balloonhint, table.info-table tr th span.balloonhint
+{
+	line-height:0px;
+	margin-top:-3px;
+	_margin-top:0px;
+	vertical-align:middle;
+}
+
+/* divでtableのように配置する場合（中にSpreadを配置する） */
+div.info-table-header
+{
+	float:left;
+	font-weight:bold;
+	margin:0;
+	vertical-align:middle;
+	text-align:left;
+	border-top:solid 1px transparent;
+	border-right:solid 1px transparent;
+	border-bottom:solid 1px transparent;
+	border-left:solid 1px transparent;
+	padding:0 0 0 5px;
+/*	background-color:#adcfe8;*/
+	background-color:#caf7e9; 
+}
+div.info-table-data
+{
+	float:left;
+	margin:0;
+	vertical-align:middle;
+	text-align:left;
+	border-top:solid 1px transparent;
+	border-right:solid 1px transparent;
+	border-bottom:solid 1px transparent;
+	border-left:solid 1px transparent;
+	padding:0px 0px 0px 2px;
+}
+div.info-table-data.stripe
+{
+	/*background-color:#e3f1eb;*/
+	/*background-color: #f5f5f5;*/
+	background-color: #f1f3f4;
+}
+
+/*------------------------------------------------------------------------------*/
+/* 【機能】																		*/
+/*　　テーブルの配色用のスタイルを決定します。									*/
+/*------------------------------------------------------------------------------*/
+tr.header-row
+{
+	background-color: #c6dbd8;
+}
+tr.stripe-row
+{
+	background-color: #f1f3f4;
+}
+th.header-cell, td.header-cell
+{
+	background-color: #f0fff0;
+}
+th.hardheader-cell, td.hardheader-cell
+{
+	background-color: #D6FFDB;
+}
+td.hard-cell
+{
+	background-color: #F4F4F4;
+}
+/*------------------------------------------------------------------------------*/
+/* 【機能】																		*/
+/*　　テーブルでレイアウトする場合のスタイルを決定します。						*/
+/*　　項目名－値を表示し、位置を合わせたい場合に使用します。				　	*/
+/*　　枠線は表示しません。背景色もありません。								  	*/
+/*    ・各行の高さはタグ側で指定します。									  	*/
+/* 【使用例】																  	*/
+/*    ・tableタグに"table-layout"を指定します。								  	*/
+/*	  　<table class="table-layout">										  	*/
+/* 【備考】										　　						  	*/
+/*    2012.06.29 現在のところ使用する予定なし。								  	*/
+/*	  必要な場合にはご相談ください。											*/
+/*------------------------------------------------------------------------------*/
+/* table.table-layout */
+/* { */
+/*     margin:0; */
+/*     padding:0; */
+/*     border:0; */
+/*     border-collapse:collapse; */
+/* } */
+/* /* th,tdタグ共通 */
+/* table.table-layout th, table.table-layout td */
+/* { */
+/*     margin:0; */
+/*     border-collapse:collapse; */
+/*     vertical-align:middle; */
+/*     text-align:left; */
+/*     border:0; */
+/* } */
+/* /* thタグ */
+/* table.table-layout th */
+/* { */
+/*	padding:3px 0 3px 5px; */
+/* } */
+/* /* tdタグ */
+/* table.table-layout td */
+/* { */
+/*	padding:3px 0 3px 2px; */
+/* } */
+
+
+
+/*------------------------------------------------------------------------------*/
+/* 【機能】																	  	*/
+/*　　ラベルに関するスタイルを指定します。             　					  	*/
+/*　　フォントサイズやフォントファミリーを指定します。　					  	*/
+/* 【使用例】																  	*/
+/*    ・標準のフォントサイズを使用する場合、何も指定する必要はありません。  	*/
+/*      <asp:Label ID="lblKana" runat="server" Text="ﾘｮｳﾋﾞ ﾀﾛｳ"></asp:Label>	*/
+/*    　これは以下の指定を同様になります。  									*/
+/*      <asp:Label ID="lblKana" runat="server" Text="ﾘｮｳﾋﾞ ﾀﾛｳ" CssClass="font_m"></asp:Label>	*/
+/*    ・標準以外のフォントサイズを使用する場合、CssClassを指定します。。  		*/
+/*      <asp:Label ID="lblKanji" runat="server" Text="両備　太郎" CssClass="font_xl"></asp:Label*/
+/*------------------------------------------------------------------------------*/
+/* 特に指定のない場合、既定のフォントサイズは10.5ptとします */
+body *
+{
+	font-family:ＭＳ ゴシック,sans-serif;
+	font-size:10.5pt;
+}
+/* 小さい文字サイズ */
+.font_s
+{
+	font-family:ＭＳ ゴシック,sans-serif;	
+	font-size:10pt;
+}
+/* 標準の文字サイズ */
+.font_m
+{
+	font-family:ＭＳ ゴシック,sans-serif;	
+	font-size:10.5pt;
+}
+/* 大きい文字サイズ */
+/* 帯やタイトルなどで使用 */
+.font_l
+{
+	font-family:ＭＳ ゴシック,sans-serif;	
+	font-size:12pt;
+}
+/* 特大の文字サイズ */
+/* 漢字氏名でのみ使用 */
+.font_xl
+{
+	font-family:ＭＳ ゴシック,sans-serif;	
+	font-size:22pt;
+}
+/* 太字 */
+.font_bold
+{
+	font-weight:bold;
+}
+/* 赤文字 */
+.forecolor_red
+{
+/*	color:#ff4040;	*/
+	color:#e10000;
+}
+/* 必須マーク */
+.notnull
+{
+    background-image:url("../Images/hrnotnull.png");
+    background-repeat:no-repeat;
+    background-position:right;
+}
+/* 項目名のラベルの背景色（テーブルで配置しない場合に使用します） */
+.itemname_bgcolor
+{
+	background-color:#cae9f7;
+}
+/* 項目名のラベルの背景色（テーブルで配置しない場合に使用します） */
+.stripe_bgcolor
+{
+	background-color:#e3f1eb;
+}
+
+/*------------------------------------------------------------------------------*/
+/* 【機能】																	  	*/
+/*　　テキストボックスがフォーカスしたときの見た目を設定します。       		  	*/
+/* 【使用例】																  	*/
+/*    ・テキストボックスのフォーカス時にこのクラスを追加します。               	*/
+/*    　共通コントロールで一括して設定するので特に意識する必要はありません。	*/
+/*------------------------------------------------------------------------------*/
+.focusin
+{
+    background-color:#FFB1F9;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
+/* 【機能】																																		*/
+/*　　ボタンを横に並べる際に使用します。　																										*/
+/*　　liタグで横に並べます。				　																									*/
+/*　　外側にulタグを記述し、class="buttons"を指定します。                       																*/
+/*　　右寄せにしたい場合は、ulタグにclass="right"を指定します。　               																*/
+/* 【使用例】																  																	*/
+/*    ・外側にulタグを記述し、class="buttons"を指定します。					  																	*/
+/*	  　<ul class="buttons">										  	        																*/
+/*	  　	<li><cc1:RoundButton ID="rb1" runat="server" ButtonSize="small" ShowModalIcon="False" Text="プレビュー" /></li>						*/
+/*	  　	<li><cc1:RoundButton ID="rb1" runat="server" ButtonSize="small" ShowModalIcon="False" Text="印刷" /></li>							*/
+/*	  　</ul>										  																							*/
+/*　　・右寄せにしたい場合は、ulタグにclass="right"を指定します。　             																*/
+/*	  　<ul class="buttons right">										  	    																*/
+/*	  　	<li><cc1:RoundButton ID="rb1" runat="server" ButtonSize="small" ShowModalIcon="False" Text="プレビュー" /></li>						*/
+/*	  　	<li><cc1:RoundButton ID="rb1" runat="server" ButtonSize="small" ShowModalIcon="False" Text="印刷" /></li>							*/
+/*	  　</ul>										  																							*/
+/*　　・削除ボタン等で間隔を空けたい場合は、liタグにclass="buttonspace"を指定します。															*/
+/*	  　<ul class="buttons right">										  	    																*/
+/*	  　	<li class="buttonspace"><cc1:RoundButton ID="rb1" runat="server" ButtonSize="small" ShowModalIcon="False" Text="削除する" /></li>	*/
+/*	  　	<li><cc1:RoundButton ID="rb1" runat="server" ButtonSize="small" ShowModalIcon="False" Text="登録する" /></li>						*/
+/*	  　</ul>										  																							*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
+ul.buttons
+{
+	margin:0;
+	border:0;
+	padding:0;
+	list-style:none;
+}
+/* 右寄せにする場合に使用します */
+ul.right
+{
+	float:right;
+	margin-right:2px;
+}
+ul.buttons li
+{
+	float:left;
+	padding:2px 8px 2px 0px;
+	vertical-align:middle;
+	display:block;
+	line-height:22px;
+}
+/* 削除やキャンセル等、動作の性質が異なるもの、誤操作を回避したいものは間隔をあけます	*/
+/* ※ガイドラインより																	*/
+ul.buttons li.buttonspace
+{
+	padding:2px 45px 2px 0px;
+}
+
+
+
+/*------------------------------------------------------------------------------*/
+/* 【機能】																	  	*/
+/*　　『新規作成』など処理状態を表すラベルに使用します。　					  	*/
+/*　　背景色をオレンジにします。　					  							*/
+/*　　現在、４文字にしか対応していません。			  							*/
+/*　　幅:60px、高さ:22pxでしか使用できません。		  							*/
+/* 【使用例】																  	*/
+/*    <asp:Label ID="lblStatus" runat="server" Text="新規作成" CssClass="statuslabel"></asp:Label*/
+/*------------------------------------------------------------------------------*/
+.statuslabel
+{
+	background-color:#ffc63c;
+	display:block;
+	line-height:22px;
+	height:22px;
+	width:60px;
+	text-align:center;
+	vertical-align:middle;
+}
+
+/*------------------------------------------------------------------------------*/
+/* 【機能】																	  	*/
+/*　　モード状態を表すラベルに使用します。            　	   				  	*/
+/*　　背景色を黄色にします。　					  						    	*/
+/*　　幅:150px、高さ:22pxでしか使用できません。		  							*/
+/* 【使用例】																  	*/
+/*    <asp:Label ID="lblStatus" runat="server" Text="新規作成" CssClass="modelabel"></asp:Label*/
+/*------------------------------------------------------------------------------*/
+.modelabel
+{
+	background-color:#F7FA25;
+	color:#F72125;
+	display:block;
+	line-height:22px;
+	height:22px;
+	width:80px;
+	text-align:center;
+	vertical-align:middle;
+	border-color:#FF0000;
+    border-style:double;
+    border-width:2px;
+    font-weight:bold;
+}
+
+/*------------------------------------------------------------------------------*/
+/* 【機能】																	  	*/
+/*　　個人コントロールが配置された部分の背景を指定します。					  	*/
+/*　　場合によっては個人コントロール、日付コントロール部分を囲います。			*/
+/*　　コンテナとなるため通常divタグに使用します。								*/
+/* 【使用例】																  	*/
+/*　　<div class="kojin-bgstyle" style="width:195px;height:48px;padding:2px 4px 2px 4px;">	*/
+/*　　    <uc1:HROOS0001 id="UC_KJN" runat="server"></uc1:HROOS0001>			*/
+/*　　</div>																	*/
+/*------------------------------------------------------------------------------*/
+.kojin-bgstyle
+{
+	background-color:#f6a7e7;
+	padding: 2px 4px;
+	border:1px solid transparent;
+}
+
+/*------------------------------------------------------------------------------*/
+/* 【機能】																	  	*/
+/*　　入力ガイドなど、ポップアップのように表示する部分の背景・枠線を指定します。*/
+/* 【使用例】																  	*/
+/*　　<div class="popup-form">                                               */
+/*　　    （入力ガイド画面のHTML）                                     			*/
+/*　　</div>																	*/
+/*------------------------------------------------------------------------------*/
+.popup-form
+{
+    background-color:#ffffff;
+    border:solid 2px #42B770; 
+}
+/* 確定・閉じるボタンに使用します */
+.popup-form input.submit
+{
+    width:65px; 
+    height:22px; 
+    _height:24px;
+}
+
+/*----------------------------------------------------------------------------*/
+/* 【機能】																	  */
+/*　　「その他の機能」を表示します。                                          */
+/* 【使用例】																  */
+/*    ・divタグに"optionmenu"を指定します。									  */
+/* 　 ・divタグ内にaタグとulタグを含めます                                    */
+/*	  　<div class="optionmenu">                                              */
+/*	  　		<a href="#">その他の機能</a>                                  */
+/*	  　		<ul><li><a href="#">xxx</a></li></ul>                         */
+/*	  　</div>																  */
+/*----------------------------------------------------------------------------*/
+.optionmenu
+{
+	display: inline-block;
+	*display: inline;       /* IE7以下ではinline-blockが効かないので対応。
+							   IE7以下ではinlineにwidth/heightが使えるので問題なし */
+	position: relative;
+	_height:1em;			/* IE6でrelativeを指定しているときにposition:absoluteがずれるのを防ぐ */
+	zoom:1;
+}
+.optionmenu a
+{
+	_line-height:1em;		/* IE6でメニューの間に隙間ができるのを防ぐ */
+}
+/* メニュー内容 */
+.optionmenu ul
+{
+	display: none; 
+	position: absolute;
+	top: 100%;
+	left: 0; 
+	z-index: 9999;
+	margin: 0; 
+	border:solid 1px #cc0c;
+	padding: 0; 
+	width:auto;
+	list-style: none;
+	background-color:#ffffff;
+}
+.optionmenu ul li
+{
+	display:block;
+	float: none;
+	padding:0 0 0 2px;
+	background: #ffffff url(../Images/hroptionmenu_li.png) no-repeat 2px center;
+	font-weight: normal; 
+	color: #000; 
+	text-indent: 3pt;
+}
+.optionmenu ul li a
+{
+	display: inline-block;
+	background: none;
+	margin:0;
+	padding: 5px;
+	height: 100%;
+}
+/* 子メニュー用（当分使用しない予定） */
+.optionmenu ul ul 
+{
+	position: absolute;
+	top:0;
+	left: 100%;
+	width:100%;
+	_margin-left:-6px;  /* Quirksモードだと謎の空白ができるので対応 */
+}
+
+
+
+
+/*--- ここからタブ ------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+/* 【機能】																	  */
+/*　　リストをタブとして表示します。										  */
+/* 【使用例】																  */
+/* 　・リストを囲むdivに"tabcontrol"を指定します							  */
+/*		<div class="tabcontrol">											  */
+/* 　・タブの幅は次の４種類から選べます。ulタグに指定します。				  */
+/* 　	tabsmall：75px幅のタブ    tabmiddle：129px幅のタブ					  */
+/* 　	tablarge：145px幅のタブ   											  */
+/*			(例)<ul class="tabsmall">										  */
+/* 　・タブの選択状態を切り替える場合、										  */
+/* 　	spanタグに"selected","unselected"指定します。						  */
+/*			選択：<span class="selected">									  */
+/*			非選択：<span class="unselected">								  */
+/* 　・段組みのタブを作る場合、上段のタブはulタグに"firsttab"を				  */
+/* 　	下段のタブはdivタグに"secondtab"を指定します。						  */
+/*			上段：<ul class="firsttab">										  */
+/*			下段：<div class="secondtab">									  */
+/*----------------------------------------------------------------------------*/
+.tabcontrol ul 
+{
+	/* 下のコンテンツとの境界線
+	   borderだとタブの前側にも線が引かれてしまうので
+	   1px×1pxの画像を横並びにすることで線のように見せかける*/
+    background: transparent url(../Images/hrtabborder.png) repeat-x left bottom;
+    list-style-type: none;	/* リストの「・」マークを消す */
+    margin: 0;
+    padding: 0 0 0 1px;
+    height:28px;    /* タブ画像の高さ + 1px */
+}
+.tabcontrol ul li 
+{
+	display:block;
+    float:left; /* リスト項目を横に並べる */
+    margin: 0 0 0 0px;
+}
+/* タブの左側 */
+.tabcontrol ul li span {
+    display: block;
+    background: url(../Images/hrtab_uf_l_or.png) no-repeat left top;
+    margin: 0;
+    cursor: pointer;
+}
+    .tabcontrol ul li span:hover {
+        background: url(../Images/hrtab_uf_l_mo.png) no-repeat left top;
+    }
+/* タブの右側 */
+    .tabcontrol ul li span input {
+        font-size: 10pt;
+        letter-spacing: -0.1em;
+        height: 27px; /* タブ画像の高さ */
+        border: 0;
+        background: url(../Images/hrtab_uf_r_or.png) no-repeat right top;
+        padding: 4px 5px 0 0; /* top:非選択状態のbackground-position, right:タブ左側画像の幅  */
+        margin: 0 0 0 5px; /* left:タブ左側画像の幅 */
+        cursor: pointer;
+        outline: none; /* ボタンをクリックしたときの枠線を消す(IE7までには効かない） */
+        *overflow: visible; /* IE7以下でボタンの左右に不必要な余白ができるのを消す */
+        *width: 1pt; /* IE7以下でボタンの左右に不必要な余白ができるのを消す */
+    }
+        .tabcontrol ul li span input:hover {
+            background: url(../Images/hrtab_uf_r_mo.png) no-repeat right top;
+        }
+/*------ 段組みタブを作る場合に使用 ------*/
+/* 上段タブ */
+.tabcontrol ul.firsttab
+{
+	margin: 0 -12px 0 0;
+}
+/* 下段タブ */
+.tabcontrol div.secondtab
+{
+	border:solid 1px #a5a5a5; 
+	border-top:solid 1px transparent;
+	width:100%; 
+	padding: 0 5px 5px 5px;
+}
+/*---------タブの幅。特に指定しなければボタン文字列の幅に合わせられます------------*/
+.tabcontrol ul.tabsmall li {
+	width: 75px;
+}
+.tabcontrol ul.tabmiddle li {
+	width: 129px;
+}
+.tabcontrol ul.tablarge li {
+	width: 145px;
+}
+.tabcontrol ul.tabsmall li span input {
+	width: 70px;
+}
+.tabcontrol ul.tabmiddle li span input {
+	width: 124px;
+}
+.tabcontrol ul.tablarge li span input {
+	width: 140px;
+}
+
+/*-------- タブ選択状態 ----------*/
+.tabcontrol ul li span.selected {
+    background-image: url(../Images/hrtab_f_l_or.png);
+    background-position: left 1px; /* クリックされたときに画像が1px上にずれるので余白を開けておく */
+    border-bottom: solid 1px #ffffff; /* タブ画像と同じ色 */
+}
+    .tabcontrol ul li span.selected:hover {
+        background-image: url(../Images/hrtab_f_l_mo.png);
+    }
+.tabcontrol ul li span.selected input {
+    background-image: url(../Images/hrtab_f_r_or.png);
+    background-position: right 1px;
+}
+    .tabcontrol ul li span.selected input:hover {
+        background-image: url(../Images/hrtab_f_r_mo.png);
+    }
+/*-------- タブ非選択状態 --------*/
+.tabcontrol ul li span.unselected
+{
+    background-position: left 4px;
+    border-bottom: solid 1px #a5a5a5; /* コンテンツ境界線画像と同じ色 */
+}
+.tabcontrol ul li span.unselected input
+{
+    background-position: right 4px;
+}
+/*----------コンテンツ表示部分-----------*/
+.tabcontrol .contents
+{
+    border: solid 1px #9a9a9a; /* コンテンツ境界線と同じ色 */
+    margin: 0;
+    border-top: 0; /* 上の線はulタグで引かれるので非表示にする */
+    width:100%;
+}
+/* float解除用 */
+.tabcontrol hr {
+    clear: both;
+    border: solid 0px transparent;
+    width: 100%;
+    margin: 0;
+    display:none;
+}
+/*---------------------------------
+ フォームの一番下側にタブを配置する用
+----------------------------------*/
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+
+/*----------------------------------------------------------------------------*/
+/* 【機能】																	  */
+/*　　MGrid用スタイル                                                         */
+/* 【備考】																      */
+/*    以下の場合に使用します　　　　　　　　　　　　　　　　　　　　　　　　　*/
+/*    ・MGridを使用する場合　　　　　　　　　　　　　　　　　                 */
+/*----------------------------------------------------------------------------*/
+.freezing
+{
+    position: relative;
+    top:expression(this.offsetParent.scrollTop);
+    z-index: 10;
+}
+
+/*----------------------------------------------------------------------------*/
+/* 【機能】																	  */
+/*　　Gridリキッドレイアウト用スタイル                                        */
+/* 【備考】																      */
+/*    以下の場合に使用します　　　　　　　　　　　　　　　　　　　　　　　　　*/
+/*    ・Gridがある画面のリキッドレイアウト対応を行う場合　　　      　　　　　*/
+/*----------------------------------------------------------------------------*/
+.gridOuter
+{          
+    border-left-color: #ffffff; 
+    border-left-width: 1px;
+    border-left-style: solid;
+            
+    border-right-color: #ffffff; 
+    border-right-width: 1px;
+    border-left-style: solid;
+}             
+        
+.gridInner
+{
+    overflow: scroll;
+}
+
+.gridInnerSclAuto
+{
+    overflow: auto;
+}
+
+.shadow
+{
+    opacity: 0.3; /* Standard: FF gt 1.5, Opera, Safari */
+    filter: alpha(opacity=30); /* IE lt 8 */
+    -ms-filter: "alpha(opacity=30)"; /* IE 8 */
+    -khtml-opacity: .30; /* Safari 1.x */
+    -moz-opacity: .30; /* FF lt 1.5, Netscape */
+}
+
+/*----------------------------------------------------------------------------*/
+/* 【機能】																	  */
+/*　　セル背景色用スタイル                                                    */
+/* 【備考】																      */
+/*    以下の場合に使用します　　　　　　　　　　　　　　　　　　　　　　　　　*/
+/*    ・セルの背景色を変更する　　　　　　　　　　　　　　　　　　　　　　　　*/
+/*----------------------------------------------------------------------------*/
+/* セル背景色（正常） */
+.attention-level0
+{
+	background-color:#ccffcc;
+	color:#000000;
+}
+/* セル背景色（要注意度１） */
+.attention-level1
+{
+	background-color:#ffff99;
+	color:#000000;
+}
+/* セル背景色（要注意度２） */
+.attention-level2
+{
+	background-color:#ffc000;
+	color:#000000;
+}
+/* セル背景色（要注意度３） */
+.attention-level3
+{
+	background-color:#ffcccc;
+	color:#000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------------------*/
+/* asp net core テスト                                */
+/*----------------------------------------------------*/
+input[type="text"].readonly {
+	background-color: lightgray;
+}
+
+
+
+
+
